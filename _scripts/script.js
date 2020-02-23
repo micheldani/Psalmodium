@@ -48,7 +48,7 @@ bookName[13] = "متفرقات";
 
 var pageMin = [0, 0, 12, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1];
 
-var pageMax = [39, 48, 175, 413, 92, 106, 86, 237, 233, 293, 366, 278, 278, 35];
+var pageMax = [39, 48, 175, 413, 92, 106, 86, 237, 233, 293, 366, 278, 278, 36];
 
 var scan, pageNumber, bookNumber, min, max, $, document, alert;
 var ext = ".png";
