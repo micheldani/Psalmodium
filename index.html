@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Orthodox Psalmodium</title>
+    <meta name="HandheldFriendly" content="true" />
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="_scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="_scripts/dbltap.js"></script>
+</head>
+
+<body>
+    <div id="navbar">
+        <button type="button" class="a-index" id="b-index" alt="Off"><img src="_nav/index.svg"></button>
+        <button type="button" class="a-coll" id="b-coll" alt="Off"></button>
+        <button type="button" class="a-goto" id="b-goto" alt="Off"><img src="_nav/goto.svg"></button>
+        <div id="b-block"> </div>
+    </div>
+    <div class="drop-collection">
+        <table>
+        <tr>
+            <td>
+            <a class="collection" title="9">القياميات</a>
+            </td>
+            <td>
+            <a class="collection" title="8">القيثارة الروحية</a>
+            </td>
+            <td>
+            <a class="collection" title="3">المزمار الروحي ١</a>
+            </td>
+        </tr>
+        <tr>	    			
+            <td>
+            <a class="collection" title="4">المزمار ٢ تريودي</a>
+            </td>
+            <td>
+            <a class="collection" title="5">المزمار ٢ بندكوستاري</a>
+            </td>
+            <td>
+            <a class="collection" title="6">المزمار الروحي ٣</a>
+            </td>
+        </tr>
+        <tr>	    			
+            <td>
+            <a class="collection" title="7">الأسبوع العظيم</a>
+            </td>
+            <td>
+            <a class="collection" title="0">الكنوز . تراتيل</a>
+            </td>
+            <td>
+            <a class="collection" title="1">الكنوز . باراكليسي</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <a class="collection" title="2">صلاة النوم والمديح</a>
+            </td>
+            <td>
+            <span id="temp">صنوج التهليل ١</span>
+            </td>
+            <td>
+            <a class="collection" title="12">صنوج التهليل ٢</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <a class="collection" title="10">القداس الإلهي</a>
+            </td>
+            <td>
+            <a class="collection" title="13">متفرقات</a>
+            </td>
+            <td>
+            </td>
+        </tr>
+        </table>
+    </div>
+    <div>
+        <form class="f-goto" id="f-goto" onsubmit="return false;">
+            <input type="tel" id="message" maxlength="3">
+            <input type="reset" id="b-go" value="GO">
+        </form>
+    </div>
+    <button type="button" id="b-prev"></button>
+    <button type="button" id="b-next"></button>
+    <div id="thepage" >
+         <img id="page" >
+    </div>
+    
+    <div id="currentPage">
+    </div>
+    
+    <div class="drop-index">
+    </div>
+    
+    <script type="text/javascript" src="_scripts/script.js"></script>
+</body>
+
+</html>

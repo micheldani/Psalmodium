@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.micheldani.Psalmodium" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Psalmodium</name>
+    <description>
+        Arabic Psalmodium
+    </description>
+    <author email="michel@micheldani.com" href="http://www.micheldani.com">
+        Michel Dani
+    </author>
+    <platform name="android" />
+    <content src="index.html" />
+    <icon source="icon.png" />
+</widget>

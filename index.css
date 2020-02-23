@@ -1,0 +1,303 @@
+body {
+    text-align: right;
+    margin: 0px;
+    background: #fff;
+}
+
+button {
+    text-align: center;
+    text-decoration: none;
+    border: hidden;
+    cursor: pointer;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+#navbar {
+    position: block;
+    top: 0px;
+    height: 40px;
+}
+#b-index {
+    position: fixed;
+    left: 85%;
+    width: 10%;
+    height: 40px;
+    background: #fff;
+    z-index: 1;
+}
+#b-coll {
+    position: fixed;
+    display: inline-block;
+    left: 15%;
+    width: 70%;
+    height: 40px;
+    background: #fff;
+    text-align: center;
+    font-size: 12pt;
+    color: #888;
+    z-index: 1;
+}
+#b-goto {
+    position: fixed;
+    left: 5%;
+    width: 10%;
+    background: #fff;
+    height: 40px;
+    z-index: 1;
+}
+
+#b-prev {
+    position: fixed;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0;
+    z-index: 1;
+}
+#b-next {
+    position: fixed;
+    left: 75%;
+    width: 25%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0;
+    z-index: 1;
+}
+
+#b-block {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    visibility: hidden;
+    background-color: #fff;
+    z-index: 2;
+}
+
+#thepage{
+    position: absolute;
+    background-color: #fff;
+    top: 40px;
+    width: 100%;
+}
+#page {
+    top: 40px;
+    width: 100%;
+    z-index: 0;
+}
+#currentPage {
+    position: fixed;
+    top: 41px;
+    left: 10px;
+    font-size: 8pt;
+    z-index: 1;
+}
+
+#f-goto {
+	position: fixed;
+	left: 10%;
+	top: 41px;
+	width: 34%;
+    height: 53px;
+	font-size: 12pt;
+	background: #eee;
+	visibility: hidden;
+    z-index: 2;
+}
+#message {
+    position: fixed;
+    top: 47px;
+    left: 12%;
+	width: 20%;
+	height: 40px;
+    margin: 0;
+	padding: 0;
+	outline: none;
+    border: none;
+	text-align: center;
+	font-size: 14pt;
+}
+#b-go {
+    position: fixed;
+    top: 47px;
+	left: 32%;
+	width: 10%;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+    border: 0;
+    border-radius: 0;
+	text-align: center;
+	font-size: 14pt;
+	color: #888;
+	background:#ccc;
+}
+
+.drop-collection {
+    position: fixed;
+    top: 40px;
+	width: 100%;
+	direction: rtl;
+	font-size: 16pt;
+    line-height: 110%;
+	font-weight: bold;
+	text-align: center;
+	background: #fff;
+	visibility: hidden;
+	z-index: 3;
+}
+table {
+    width: 100%;
+}
+td {
+	width: 33%;
+	height: 120px;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Index sizes */
+
+.drop-index {
+    position: absolute;
+	top: 40px;
+	width: 100%;
+	height: 100%;
+    direction: rtl;
+	font-size: 8pt;
+	visibility: hidden;
+	z-index: 4;
+}
+
+p	{
+	padding: 0;
+	margin: 0;
+	line-height: 150%;
+	}
+p.section	{
+	padding: 15px 0px 0px 0px;
+	margin: 0;
+	}
+p.section-2 {
+	font-weight: bold;
+	margin: 0;
+	}	
+p.section-title {
+	text-decoration: underline;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	}
+
+.outline-bg {
+    position: fixed;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+    background-color:#fff;
+}
+	
+
+/* Column sizes */
+
+.one-col {
+	padding: 5px 0px 10px 10px;
+	width: 60%;
+	position: fixed;
+	right: 20%;
+}
+
+.two-col1 {
+	padding: 5px 0px 10px 10px;
+	width: 44%;
+	position: fixed;
+	right: 6%;
+}
+.two-col2 {
+	padding: 5px 10px 10px 10px;
+	width: 44%;
+	position: fixed;
+	right: 48%;
+}
+	
+.four-col1 {
+	padding: 5px 10px 10px 10px;
+	width: 21%;
+	position: fixed;
+	right: 3%;
+}
+.four-col2 {
+	padding: 5px 10px 10px 10px;
+	width: 21%;
+	position: fixed;
+	right: 27%;
+}
+.four-col3 {
+	padding: 5px 10px 10px 10px;
+	width: 21%;
+	position: fixed;
+	right: 51%;
+}
+.four-col4 {
+	padding: 5px 10px 10px 10px;
+	width: 21%;
+	position: fixed;
+	right: 74%;
+}
+
+.miz-col1 {
+	padding: 5px 10px 10px 10px;
+	width: 28%;
+	position: fixed;
+	right: 6%;
+}
+.miz-col2 {
+	padding: 5px 10px 10px 10px;
+	width: 28%;
+	position: fixed;
+	right: 38%;
+}
+.miz-col3 {
+	padding: 5px 10px 10px 10px;
+	width: 28%;
+	position: fixed;
+	right: 70%;
+}
+	
+.miz-num1 {
+	text-align: left;
+	padding: 5px 10px 10px 10px;
+	width: 3%;
+	position: fixed;
+	right: 2%;
+}
+.miz-num2 {
+	text-align: left;
+	padding: 5px 10px 10px 10px;
+	width: 3%;
+	position: fixed;
+	right: 34%;
+}
+.miz-num3 {
+	text-align: left;
+	padding: 5px 10px 10px 10px;
+	width: 3%;
+	position: fixed;
+	right: 66%;
+}
+
+a:link		{  text-decoration: none;  color: #000000;  }
+a:visited	{  text-decoration: none;  color: #000000;  }
+a:hover		{  text-decoration: none;  color: #aaaaaa;  }
+a:active	{  text-decoration: none;  color: #606060;  }
+
+#temp {
+	color: #aaa;
+	}
