@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="50px" height="40px" version="1.1" xmlns="http://www.w3.org/2000/svg" >
-    <circle cx="25px" cy="12px" r="8px" fill="#888" />
-	<path d="M19 21 A 11 11 90 0 0 31 21 L31 34 L19 34 z" fill="#888" />
+<svg width="24px" height="32px" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+    <circle cx="12px" cy="8px" r="6px" fill="#888" />
+	<path d="M6 14 A 12 12 90 0 0 18 14 L18 28 L6 28 z" fill="#888" />
 </svg>
