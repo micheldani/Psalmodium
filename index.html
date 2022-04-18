@@ -1,99 +1,1046 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
-    <meta charset="UTF-8">
-    <title>Orthodox Psalmodium</title>
-    <meta name="HandheldFriendly" content="true" />
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script type="text/javascript" src="_scripts/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="_scripts/dbltap.js"></script>
+	<meta charset="UTF-8">
+	<title>Orthodox Psalmodium</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="_scripts/w3.css">
+	<link rel="stylesheet" type="text/css" href="_scripts/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="_scripts/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="_scripts/hammer.min.js"></script>
 </head>
 
 <body>
-    <div id="navbar">
-        <button type="button" class="a-index" id="b-index" alt="Off"><img src="_nav/index.svg"></button>
-        <button type="button" class="a-coll" id="b-coll" alt="Off"></button>
-        <button type="button" class="a-goto" id="b-goto" alt="Off"><img src="_nav/goto.svg"></button>
-        <div id="b-block"> </div>
-    </div>
-    <div class="drop-collection">
-        <table>
-        <tr>
-            <td>
-            <a class="collection" title="9">القياميات</a>
-            </td>
-            <td>
-            <a class="collection" title="8">القيثارة الروحية</a>
-            </td>
-            <td>
-            <a class="collection" title="3">المزمار الروحي ١</a>
-            </td>
-        </tr>
-        <tr>	    			
-            <td>
-            <a class="collection" title="4">المزمار ٢ تريودي</a>
-            </td>
-            <td>
-            <a class="collection" title="5">المزمار ٢ بندكوستاري</a>
-            </td>
-            <td>
-            <a class="collection" title="6">المزمار الروحي ٣</a>
-            </td>
-        </tr>
-        <tr>	    			
-            <td>
-            <a class="collection" title="7">الأسبوع العظيم</a>
-            </td>
-            <td>
-            <a class="collection" title="0">الكنوز . تراتيل</a>
-            </td>
-            <td>
-            <a class="collection" title="1">الكنوز . باراكليسي</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <a class="collection" title="2">صلاة النوم والمديح</a>
-            </td>
-            <td>
-            <span id="temp">صنوج التهليل ١</span>
-            </td>
-            <td>
-            <a class="collection" title="12">صنوج التهليل ٢</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <a class="collection" title="10">القداس الإلهي</a>
-            </td>
-            <td>
-            <a class="collection" title="13">متفرقات</a>
-            </td>
-            <td>
-            </td>
-        </tr>
-        </table>
-    </div>
-    <div>
-        <form class="f-goto" id="f-goto" onsubmit="return false;">
-            <input type="tel" id="message" maxlength="3">
-            <input type="reset" id="b-go" value="GO">
-        </form>
-    </div>
-    <button type="button" id="b-prev"></button>
-    <button type="button" id="b-next"></button>
-    <div id="thepage" >
-         <img id="page" >
-    </div>
-    
-    <div id="currentPage">
-    </div>
-    
-    <div class="drop-index">
-    </div>
-    
-    <script type="text/javascript" src="_scripts/script.js"></script>
+
+	<div class="">
+		<div class="w3-bar w3-black">
+		<button class="a-coll w3-button w3-bar-item" id="b-coll" value="Off">
+			<div class="w3-left" id="book"></div>
+			<div class="w3-left" id="arrow">\/</div>
+			</button>
+			<form class="w3-right f-goto" id="f-goto" onsubmit="return false;">
+				<input class="w3-bar-item w3-padding-small w3-input w3-white" type="tel" id="message" maxlength="3">
+				<input class="w3-bar-item w3-padding-small w3-button w3-green" type="reset" id="b-go" value="GO">
+			</form>
+			<img src="_nav/index.svg" class="a-index w3-padding-small w3-button w3-bar-item w3-right" id="b-index" value="Off">
+		</div>
+	</div>
+
+	<div class="w3-sidebar w3-top w3-animate-top drop-collection">
+		<table class="w3-table w3-centered w3-margin-top">
+			<tr>
+				<td>
+					<a class="collection" title="9">القياميات</a>
+				</td>
+				<td>
+					<a class="collection" title="8">القيثارة الروحية</a>
+				</td>
+				<td>
+					<a class="collection" title="3">المزمار ١</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a class="collection" title="4">المزمار ٢ تريودي</a>
+				</td>
+				<td>
+					<a class="collection" title="5">المزمار ٢ بندكوستاري</a>
+				</td>
+				<td>
+					<a class="collection" title="6">المزمار ٣</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a class="collection" title="7">الأسبوع العظيم</a>
+				</td>
+				<td>
+					<a class="collection" title="0">الكنوز . تراتيل</a>
+				</td>
+				<td>
+					<a class="collection" title="1">الكنوز . باراكليسي</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a class="collection" title="2">صلاة النوم والمديح</a>
+				</td>
+				<td>
+					<a class="collection" title="11">صنوج التهليل ١</a>
+				</td>
+				<td>
+					<a class="collection" title="12">صنوج التهليل ٢</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a class="collection" title="10">القداس الإلهي</a>
+				</td>
+				<td>
+					<a class="collection" title="13">متفرقات</a>
+				</td>
+				<td>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="w3-sidebar w3-bar-block w3-card w3-top w3-animate-right drop-index">
+		<div class="bookTOC w3-light-grey" id="0" title="kounouz a">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="1">أنيكسانداريا</a>
+					<a class="index" title="7">المزمور الخمسون . لحن ثاني</a>
+					<a class="index" title="11">المجد والآن . بشفعات الرسل . لقد قام… لحن ثاني</a>
+					<a class="index" title="12">المزمور الخمسون . لحن سابع</a>
+					<a class="index" title="15">المجد والآن . بشفعات الرسل . لقد قام… لحن سابع</a>
+					<a class="index" title="17">مجدلية كبرى . لحن رابع . لعيد الصليب المقدس</a>
+					<a class="index" title="21">قدوس الله . لحن رابع مطولة</a>
+					<a class="index" title="22">ذوكصا اينوس عيد تجديد هيكل القديس جاورجيوس</a>
+					<a class="index" title="23">عيد القديس يوحنا الدمشقي</a>
+					<a class="index" title="27">المجد… لاينوس عيد الشهيدة بربارة</a>
+					<a class="index" title="29">بشفاعات والدة الاله . خلصنا… لحن سابع</a>
+					<a class="index" title="30">قدوس الله… لحن اول</a>
+					<a class="index" title="32">شاروبيكون لحن ثاني مختصر</a>
+					<a class="index" title="33">الله الرب ظهر لنا ... ليكن اسم الرب . لحن خامس</a>
+					<a class="index" title="34">احفظ يا رب سيدنا . بطريركية</a>
+					<a class="index" title="35">دعاء لصاحب الغبطة اغناطيوس الرابع</a>
+					<a class="index" title="36">دعاء لسيادة متروبوليت بيروت الياس عوده</a>
+					<a class="index" title="37">نشيد معهد دير سيدة البلمند</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="1" title="kounouz b">
+			<div class="w3-container">
+				<h6>الباراكليسي الصغير</h6>
+				<p>
+					<a class="index" title="1">الله الرب ظهر لنا</a>
+					<a class="index" title="3">الاودية الاولى</a>
+					<a class="index" title="5">الاودية الثالثة</a>
+					<a class="index" title="7">خلصي عبيدك</a>
+					<a class="index" title="8">الاودية الرابعة</a>
+					<a class="index" title="9">الاودية الخامسة</a>
+					<a class="index" title="10">الاودية السادسة</a>
+					<a class="index" title="13">يا شفيعة المسيحيين</a>
+					<a class="index" title="13">الانتيفونا الاولى</a>
+					<a class="index" title="18">الاودية السابعة</a>
+					<a class="index" title="19">الاودية الثامنة</a>
+					<a class="index" title="21">الاودية التاسعة</a>
+					<a class="index" title="23">بواجب الاسئهال</a>
+				</p>
+				<h6>الباراكليسي الكبير</h6>
+				<p>
+					<a class="index" title="30">الاودية الاولى</a>
+					<a class="index" title="32">الاودية الثالثة</a>
+					<a class="index" title="34">الاودية الرابعة</a>
+					<a class="index" title="36">الاودية الخامسة</a>
+					<a class="index" title="38">الاودية السادسة</a>
+					<a class="index" title="40">الاودية السابعة</a>
+					<a class="index" title="42">الاودية الثامنة</a>
+					<a class="index" title="44">الاودية التاسعة</a>
+				</p>
+				<h6>عيد رقاد سيدتنا والدة الاله</h6>
+				<p>
+					<a class="index" title="49">صلاة المساء</a>
+					<a class="index" title="57">المجد الآن ثمانية ألحان</a>
+					<a class="index" title="61">المجد الآن للتين لحن خامس</a>
+					<a class="index" title="64">أبوستيخن العيد</a>
+				</p>
+				<hr>
+				<p>	
+					<a class="index" title="70">صلاة السحر</a>
+					<a class="index" title="75">كاطافاسيات لحن أول</a>
+					<a class="index" title="84">الإكسابوستيلاري</a>
+					<a class="index" title="86">المجد الآن باللحن السادس</a>
+					<a class="index" title="87">المجدلة الكبرى</a>
+					<a class="index" title="93">تقاريظ السيدة</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="2" title="madih">
+			<div class="w3-container">
+				<h6>صلاة النوم الكبرى</h6>
+				<p>
+					<a class="index" title="14">مزامير المرحلة الأولى</a>
+					<a class="index" title="23">معنا هو الله</a>
+					<a class="index" title="31">إن طبيعة الشاروبيم</a>
+					<a class="index" title="36">أيتها السيدة الكلي قدسها</a>
+					<a class="index" title="40">أنر عيني</a>
+					<a class="index" title="42">إفشين باسيليوس</a>
+					<a class="index" title="43">مزامير المرحلة الثانية</a>
+					<a class="index" title="46">صلاة منسى</a>
+					<a class="index" title="48">إرحمنا يا رب ارحمنا</a>
+					<a class="index" title="50">مزامير المرحلة الثالثة</a>
+					<a class="index" title="52">ذوكصولوجيا</a>
+					<a class="index" title="54">يا رب القوات</a>
+					<a class="index" title="60">يا والدة الإله… عليك وضعت</a>
+					<a class="index" title="61">تتمة صلاة النوم الكبرى</a>
+					<a class="index" title="68">أيتها الصالحة</a>
+					<a class="index" title="69">أيها المسيح الإله</a>
+					<a class="index" title="70">أراميس القانون الكبير</a>
+					<a class="index" title="77">فصول إنجيلية</a>
+				</p>
+				<h6>المديح الذي لا يجلس فيه</h6>
+				<p>
+					<a class="index" title="83">بداية صلاة النوم الكبرى</a>
+					<a class="index" title="91">القانون</a>
+					<a class="index" title="102">تتمة صلاة النوم الكبرى</a>
+					<a class="index" title="109">الفصل الإنجيلي</a>
+					<a class="index" title="110">الدور الأول</a>
+					<a class="index" title="113">الدور الثاني</a>
+					<a class="index" title="116">الدور الثالث</a>
+					<a class="index" title="119">الدور الرابع</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="123">إن غير المتجسد</a>
+					<a class="index" title="124">القانون</a>
+					<a class="index" title="157">إني أنا عبدك</a>
+					<a class="index" title="162">إفرحي… هلليلوييا</a>
+					<a class="index" title="172">إن جبرائيل</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="3" title="mizmar 1">
+			<div class="w3-container">
+				<h6>شهر ايلول</h6>
+				<p>
+					<a class="index" title="400">١ رأس السنة الكنائسية</a>
+					<a class="index" title="1">٨ مولد والدة الاله</a>
+					<a class="index" title="16">١٤ رفع الصليب الكريم</a>
+					<a class="index" title="400">٢٤ اولى الشهيدات ثقلا</a>
+					<a class="index" title="401">٢٦ + يوحنا الانجيلي</a>
+				</p>
+				<h6>شهر تشرين الاول</h6>
+				<p>
+					<a class="index" title="36">١١ احد الآباء</a>
+					<a class="index" title="402">١٨ + لوقا الانجيلي</a>
+					<a class="index" title="37">٢٦ + ديميتريوس</a>
+				</p>
+				<h6>شهر تشرين الثاني</h6>
+				<p>
+					<a class="index" title="54">٨ ميخائيل و جبرائيل</a>
+					<a class="index" title="403">١٢ يوحنا الذهبي الفم</a>
+					<a class="index" title="404">١٦ + متى الانجيلي</a>
+					<a class="index" title="69">٢١ دخول السيدة</a>
+					<a class="index" title="405">٢٧ + يعقوب الفارسي</a>
+					<a class="index" title="408">٣٠ اندراوس الرسول</a>
+				</p>
+				<h6>شهر كانون الاول</h6>
+				<p>
+					<a class="index" title="85">٦ نيقولاوس العجائبي</a>
+					<a class="index" title="107">١١ احد الاجداد</a>
+					<a class="index" title="110">الاحد قبل الميلاد</a>
+					<a class="index" title="116">بارامون الميلاد</a>
+					<a class="index" title="143">٢٥ عيد الميلاد المجيد</a>
+					<a class="index" title="169">٢٦ سحر ثاني عيد الميلاد</a>
+					<a class="index" title="170">الاحد الذي بعد الميلاد</a>
+				</p>
+				<h6>شهر كانون الثاني</h6>
+				<p>
+					<a class="index" title="171">١ ختان ربنا يسوع المسيح</a>
+					<a class="index" title="187">الاحد قبل الظهور</a>
+					<a class="index" title="188">بارامون الظهور</a>
+					<a class="index" title="212">٦ الظهور الالهي</a>
+					<a class="index" title="233">٧ النبي يوحنا المعمدان</a>
+					<a class="index" title="234">١٧ البار انطونيوس</a>
+					<a class="index" title="245">٢٥ غريغوريوس التاولوغوس</a>
+					<a class="index" title="246">٢٧ نقل جسد الذهبي الفم</a>
+					<a class="index" title="247">٣٠ الثلاثة اقمار الكنيسة</a>
+				</p>
+				<h6>شهر شباط</h6>
+				<p>
+					<a class="index" title="260">٢ دخول السيد</a>
+				</p>
+				<h6>شهر آذار</h6>
+				<p>
+					<a class="index" title="275">٢٥ بشارة والدة الاله</a>
+				</p>
+				<h6>شهر نيسان</h6>
+				<p>
+					<a class="index" title="279">٢٣ + جاورجيوس</a>
+				</p>
+				<h6>شهر ايار</h6>
+				<p>
+					<a class="index" title="304">٢١ قسطنطين و هيلاني</a>
+				</p>
+				<h6>شهر حزيران</h6>
+				<p>
+					<a class="index" title="315">٢٤ مولد السابق</a>
+					<a class="index" title="326">٢٩ + بطرس و بولس</a>
+					<a class="index" title="341">٣٠ + الرسل الاثني عشر</a>
+				</p>
+				<h6>شهر تموز</h6>
+				<p>
+					<a class="index" title="343">١٣ احد الآباء القديسين</a>
+					<a class="index" title="344">٢٠ + الياس الغيور</a>
+				</p>
+				<h6>شهر آب</h6>
+				<p>
+					<a class="index" title="354">٦ عيد التجلي</a>
+					<a class="index" title="373">١٥ رقاد السيدة</a>
+					<a class="index" title="396">٢٩ قطع رأس السابق</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="4" title="mizmar 2a">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="1">أحد الفريسي و العشار</a>
+					<a class="index" title="8">أحد الابن الشاطر</a>
+					<a class="index" title="18">أحد مرفع اللحم</a>
+					<a class="index" title="28">أحد مرفع الجبن</a>
+					<a class="index" title="39">الأحد الأول من الصوم</a>
+					<a class="index" title="47">الأحد الثاني من الصوم</a>
+					<a class="index" title="52">الأحد الثالث من الصوم</a>
+					<a class="index" title="59">مساء الأربعاء من الأسبوع الرابع</a>
+					<a class="index" title="61">مساء عيد الشهداء الأربعين</a>
+					<a class="index" title="62">ايذيوميلات الأموات</a>
+					<a class="index" title="69">الأحد الرابع من الصوم</a>
+					<a class="index" title="71">الأحد الخامس من الصوم</a>
+					<a class="index" title="76">سبت القديس العازر</a>
+					<a class="index" title="76">أحد الشعانين</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="5" title="mizmar 2b">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="1">أحد الفصح العظيم</a>
+					<a class="index" title="2">كاطافاسيات</a>
+					<a class="index" title="3">الإكسابوستيلاري </a>
+					<a class="index" title="8">استيشيرات </a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="12">مساء أحد توما</a>
+					<a class="index" title="22">سحر أحد توما</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="26">مساء أحد حاملات الطيب</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="33">مساء أحد المخلع</a>
+					<a class="index" title="38">سحر أحد المخلع</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="38">مساء أحد السامرية</a>
+					<a class="index" title="44">سحر أحد السامرية</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="45">مساء أحد الأعمى</a>
+					<a class="index" title="50">سحر أحد الأعمى</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="51">مساء خميس الصعود</a>
+					<a class="index" title="61">سحر خميس الصعود</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="64">مساء أحد الآباء</a>
+					<a class="index" title="66">سحر أحد الآباء</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="71">مساء أحد العنصرة</a>
+					<a class="index" title="81">سحر أحد العنصرة</a>
+					<a class="index" title="90">الإكسابوستيلاري</a>
+					<a class="index" title="93">أحد العنصرة</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="96">مساء أحد جميع القديسين</a>
+					<a class="index" title="101">سحر أحد جميع القديسين</a>
+					<a class="index" title="104">أحد جميع القديسين</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="6" title="mizmar 3">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="1">منذ شبابي مختصرة مطولة</a>
+					<a class="index" title="2">طروبريات لأعياد مختلفة</a>
+					<a class="index" title="7">يا رب القوات</a>
+					<a class="index" title="8">الكلام الجوهري بالألحان الثمانية</a>
+					<a class="index" title="21">أحبك يا رب قوتي</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="22">الكلام الجوهري على صوتين لحن ثامن</a>
+					<a class="index" title="24">الكلام الجوهري على صوتين لحن خامس</a>
+					<a class="index" title="26">الكلام الجوهري لقداس باسيليوس</a>
+					<a class="index" title="27">بواجب الإستئهال لحن سابع</a>
+					<a class="index" title="28">يا الله دخلت الأمم الى ميراثك</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="32">دعاء لبطريرك أنطاكية</a>
+					<a class="index" title="33">دعاء لمطران بيروت</a>
+					<a class="index" title="34">دعاء لمطران طرابلس</a>
+					<a class="index" title="35">دعاء لمطران جبل لبنان</a>
+					<a class="index" title="37">دعاء لمطران زحلة</a>
+					<a class="index" title="37">الى سنين عديدة</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="38">الكلام الجوهري باليوناني بالألحان الثمانية</a>
+					<a class="index" title="55">أكسيون أستين بالألحان الثمانية</a>
+					<a class="index" title="72">تاسعة عيد ميلاد السيد المسيح باليوناني</a>
+					<a class="index" title="73">تاسعة الفصح باليوناني</a>
+					<a class="index" title="75">ايها الذين بالمسيح اعتمدتم . للهيكل . باليوناني</a>
+					<a class="index" title="76">بوليخرونين للبطريرك الأنطاكي باليوناني</a>
+					<a class="index" title="77">يا رب إن المرأة التي سقطت… باليوناني</a>
+					<a class="index" title="80">تراتيل صلاة الإكليل</a>
+					<a class="index" title="83">طروبارية و قنداق لعيد العمال</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="7" title="ousbou3">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="1">عشية احد الشعانين - عن صباح الإثنين العظيم</a>
+					<a class="index" title="24">عشية الإثنين العظيم - عن صباح الثلاثاء العظيم</a>
+					<a class="index" title="37">عشية الثلاثاء العظيم - عن صباح الأربعاء العظيم</a>
+					<a class="index" title="58">مساء الخميس العظيم</a>
+					<a class="index" title="65">عشية الخميس العظيم المقدس</a>
+					<a class="index" title="126">يوم الجمعة العظيم المقدس - صباحاً</a>
+					<a class="index" title="136">مساء الجمعة العظيم</a>
+					<a class="index" title="149">عشية الجمعة العظيمة - او صباح السبت العظيم</a>
+					<a class="index" title="189">السبت العظيم - صباحاً</a>
+					<a class="index" title="197">احد الفصح العظيم</a>
+					<a class="index" title="218">مساء الفصح المجيد</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="225">+صفحة ٢٤</a>
+					<a class="index" title="226">إنني أشاهد</a>
+					<a class="index" title="227">إن موسى العظيم</a>
+					<a class="index" title="229">المسيح قام </a>
+					<a class="index" title="231">اليوم يوم القيامة</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="8" title="qithara">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="5">السلاميات</a>
+					<a class="index" title="9">يا رب ارحم</a>
+					<a class="index" title="11">بشفاعات</a>
+					<a class="index" title="14">الايصوذيكون</a>
+					<a class="index" title="15">طروباريات</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="70">التريصاجيون</a>
+					<a class="index" title="72">يا رب يا رب</a>
+					<a class="index" title="73">انتم الذين</a>
+					<a class="index" title="75">لصليبك</a>
+					<a class="index" title="77">يا رب خلص</a>
+					<a class="index" title="78">فيمي بطريرك</a>
+					<a class="index" title="79">فيمي مطران</a>
+					<a class="index" title="81">رسالة ميلاد</a>
+					<a class="index" title="83">إنجيل ميلاد</a>
+					<a class="index" title="87">طلبات إنجيل</a>
+				</p>
+				<h6>شيروبيكون</h6>
+				<p>
+					<a class="index" title="91">شيروبيكون</a>
+					<a class="index" title="128">البروجيازمينا</a>
+					<a class="index" title="133">الخميس العظيم</a>
+					<a class="index" title="135">السبت العظيم</a>
+					<a class="index" title="139">طلبات</a>
+					<a class="index" title="143">كلام جوهري</a>
+					<a class="index" title="150">خاص باسيليوس</a>
+					<a class="index" title="151">ان البرايا باسرها</a>
+					<a class="index" title="152">بواجب الاستئهال</a>
+					<a class="index" title="161">بواجب... مطولة</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="187">اذكر يا رب ابانا</a>
+					<a class="index" title="188">+ باسيليوس</a>
+					<a class="index" title="189">...لماء الينبوع</a>
+					<a class="index" title="189">تتمة الطلبات</a>
+					<a class="index" title="192">كينونيكونات</a>
+					<a class="index" title="227">بخوف الله… ختام </a>
+				</p>
+				<h6>لتذكارات شهرية</h6>
+				<p>
+					<a class="index" title="33">ميلاد السيدة</a>
+					<a class="index" title="34">رفع الصليب</a>
+					<a class="index" title="36">+ ديميتريوس</a>
+					<a class="index" title="36">رئيسي الملائكة</a>
+					<a class="index" title="37">يوحنا الفم الذهب</a>
+					<a class="index" title="38">دخول السيدة</a>
+					<a class="index" title="39">+ نيقولاوس</a>
+					<a class="index" title="40">تقدمة عيد الميلاد</a>
+					<a class="index" title="40">احد الاجداد</a>
+					<a class="index" title="41">عيد الميلاد</a>
+					<a class="index" title="44">عيد الختان</a>
+					<a class="index" title="45">+ باسيليوس</a>
+					<a class="index" title="46">تقدمة الظهور </a>
+					<a class="index" title="47">الظهور الالهي</a>
+					<a class="index" title="49">+ يوحنا المعمدان</a>
+					<a class="index" title="49">+ انطونيوس</a>
+					<a class="index" title="50">الثلاثة اقمار</a>
+					<a class="index" title="52">دخول السيد</a>
+					<a class="index" title="53">+ خرالمبس</a>
+					<a class="index" title="54">الشهداء الاربعين</a>
+					<a class="index" title="54">بشارة العذراء</a>
+					<a class="index" title="56">+ جاورجيوس</a>
+					<a class="index" title="56">قسطنطين وهيلاني</a>
+					<a class="index" title="57">مولد المعمدان</a>
+					<a class="index" title="57">بطرس و بولس</a>
+					<a class="index" title="58">النبي ايليا</a>
+					<a class="index" title="58">عيد التجلي</a>
+					<a class="index" title="60">رقاد السيدة</a>
+					<a class="index" title="61">يا شفيعة...</a>
+				</p>
+				<h6>التريودي</h6>
+				<p>
+					<a class="index" title="62">الفريسي والعشار</a>
+					<a class="index" title="62">الابن الشاطر</a>
+				</p>
+				<p>
+					<a class="index" title="63">مرفع اللحم</a>
+					<a class="index" title="64">مرفع الجبن</a>
+					<a class="index" title="64">أحد الصوم الاول</a>
+					<a class="index" title="55">اني انا عبدك</a>
+					<a class="index" title="65">أحد الصوم الثاني</a>
+					<a class="index" title="35">أحد الصوم الثالث</a>
+					<a class="index" title="66">أحد الصوم الرابع</a>
+					<a class="index" title="67">سبت لعازر</a>
+					<a class="index" title="79">أحد الشعانين</a>
+				</p>
+				<h6>كطافاسيات عوض بواجب</h6>
+				<p>
+					<a class="index" title="166">ميلاد السيدة</a>
+					<a class="index" title="167">رفع الصليب</a>
+					<a class="index" title="168">دخول السيدة</a>
+					<a class="index" title="170">عيد الميلاد</a>
+					<a class="index" title="173">الظهور الالهي</a>
+					<a class="index" title="175">دخول السيد</a>
+					<a class="index" title="176">بشارة العذراء</a>
+					<a class="index" title="177">عيد التجلي</a>
+					<a class="index" title="178">رقاد السيدة</a>
+					<a class="index" title="179">سبت لعازر</a>
+					<a class="index" title="180">احد الشعانين</a>
+					<a class="index" title="181">+ احد الفصح</a>
+					<a class="index" title="183">احد توما</a>
+					<a class="index" title="183">خميس الصعود</a>
+					<a class="index" title="184">عيد العنصرة</a>
+					<a class="index" title="185">اثنين الروح القدس</a>
+				</p>
+				<h6>+ احد الفصح</h6>
+				<p>
+					<a class="index" title="21">المسيح قام</a>
+					<a class="index" title="24">الايصوذيكون</a>
+					<a class="index" title="24">الايباكوبي</a>
+					<a class="index" title="25">القنداق</a>
+				</p>
+				<h6>آحاد القيامة</h6>
+				<p>
+					<a class="index" title="25">توما</a>
+					<a class="index" title="26">حاملات الطيب</a>
+					<a class="index" title="27">نصف الخمسين</a>
+					<a class="index" title="28">خميس الصعود</a>
+					<a class="index" title="30">أحد الآباء</a>
+					<a class="index" title="30">العنصرة</a>
+					<a class="index" title="31">جميع القديسين</a>
+				</p>
+				<h6>كينونيكوناتالاعياد السيدية</h6>
+				<p>
+					<a class="index" title="206">ميلاد السيدة</a>
+					<a class="index" title="206">دخول السيدة</a>
+					<a class="index" title="206">دخول السيد</a>
+					<a class="index" title="206">رقاد السيدة</a>
+					<a class="index" title="207">رفع الصليب</a>
+					<a class="index" title="209">عيد الميلاد</a>
+					<a class="index" title="210">الظهور الالهي</a>
+					<a class="index" title="212">بشارة العذراء</a>
+					<a class="index" title="213">احد الشعانين</a>
+					<a class="index" title="133">الخميس العظيم</a>
+					<a class="index" title="215">السبت العظيم</a>
+					<a class="index" title="216">+ احد الفصح</a>
+					<a class="index" title="218">احد توما</a>
+					<a class="index" title="220">خميس الصعود</a>
+					<a class="index" title="221">احد العنصرة</a>
+					<a class="index" title="221">اثنين الروح القدس</a>
+					<a class="index" title="222">جميع القديسين</a>
+					<a class="index" title="224">عيد التجلي</a>
+					<a class="index" title="225">لعيد كل قديس</a>
+					<a class="index" title="226">لعيد كل رسول</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="9" title="qiyamiyat">
+			<div class="w3-container">
+				<h6>اللحن الأول</h6>
+				<p>
+					<a class="index" title="1">يا رب إليك صرخت</a>
+					<a class="index" title="12">أبوستيخن</a>
+					<a class="index" title="16">طروبارية</a>
+					<a class="index" title="18">يا من هي أكرم </a>
+					<a class="index" title="19">إكسابوستيلاري ١</a>
+					<a class="index" title="20">كل نسمة.. إينوس</a>
+					<a class="index" title="26">إيوثينا ١</a>
+					<a class="index" title="28">مجدلية كبرى</a>
+				</p>
+				<h6>اللحن الثاني</h6>
+				<p>
+					<a class="index" title="32">يا رب إليك صرخت</a>
+					<a class="index" title="42">أبوستيخن</a>
+					<a class="index" title="46">طروبارية</a>
+					<a class="index" title="48">يا من هي أكرم </a>
+					<a class="index" title="48">إكسابوستيلاري ٢</a>
+					<a class="index" title="50">كل نسمة.. إينوس</a>
+					<a class="index" title="56">إيوثينا ٢</a>
+					<a class="index" title="58">مجدلية كبرى</a>
+				</p>
+				<h6>اللحن الثالث</h6>
+				<p>
+					<a class="index" title="61">يا رب إليك صرخت</a>
+					<a class="index" title="70">أبوستيخن</a>
+					<a class="index" title="73">طروبارية</a>
+					<a class="index" title="74">يا من هي أكرم</a>
+					<a class="index" title="75">إكسابوستيلاري ٣</a>
+					<a class="index" title="76">كل نسمة.. إينوس</a>
+					<a class="index" title="81">إيوثينا ٣</a>
+					<a class="index" title="83">مجدلية كبرى</a>
+				</p>
+				<h6>اللحن الرابع</h6>
+				<p>
+					<a class="index" title="87">يا رب إليك صرخت</a>
+					<a class="index" title="97">أبوستيخن</a>
+					<a class="index" title="101">طروبارية</a>
+					<a class="index" title="102">يا من هي أكرم</a>
+					<a class="index" title="102">إكسابوستيلاري ٤</a>
+					<a class="index" title="104">كل نسمة.. إينوس</a>
+					<a class="index" title="109">إيوثينا ٤</a>
+					<a class="index" title="112">مجدلية كبرى</a>
+				</p>
+				<h6>اللحن الخامس</h6>
+				<p>
+					<a class="index" title="115">يا رب إليك صرخت</a>
+					<a class="index" title="124">أبوستيخن</a>
+					<a class="index" title="128">طروبارية</a>
+					<a class="index" title="129">يا من هي أكرم </a>
+					<a class="index" title="129">إكسابوستيلاري ٥</a>
+					<a class="index" title="131">كل نسمة.. إينوس</a>
+					<a class="index" title="137">إيوثينا ٥</a>
+					<a class="index" title="140">مجدلية كبرى</a>
+				</p>
+				<h6>اللحن السادس</h6>
+				<p>
+					<a class="index" title="143">يا رب إليك صرخت</a>
+					<a class="index" title="153">أبوستيخن</a>
+					<a class="index" title="157">طروبارية</a>
+					<a class="index" title="158">يا من هي أكرم </a>
+					<a class="index" title="158">إكسابوستيلاري ٦</a>
+					<a class="index" title="160">كل نسمة.. إينوس</a>
+					<a class="index" title="165">إيوثينا ٦</a>
+					<a class="index" title="167">مجدلية كبرى</a>
+				</p>
+				<h6>اللحن السابع</h6>
+				<p>
+					<a class="index" title="175">يا رب إليك صرخت</a>
+					<a class="index" title="185">أبوستيخن</a>
+					<a class="index" title="187">طروبارية</a>
+					<a class="index" title="189">يا من هي أكرم</a>
+					<a class="index" title="189">إكسابوستيلاري ٧</a>
+					<a class="index" title="190">كل نسمة.. إينوس</a>
+					<a class="index" title="195">إيوثينا ٧</a>
+					<a class="index" title="197">مجدلية كبرى</a>
+				</p>
+				<h6>اللحن الثامن</h6>
+				<p>
+					<a class="index" title="200">يا رب إليك صرخت</a>
+					<a class="index" title="209">أبوستيخن</a>
+					<a class="index" title="212">طروبارية</a>
+					<a class="index" title="213">يا من هي أكرم</a>
+					<a class="index" title="214">إكسابوستيلاري ٨</a>
+					<a class="index" title="215">كل نسمة.. إينوس</a>
+					<a class="index" title="220">إيوثينا ٨</a>
+					<a class="index" title="222">مجدلية كبرى</a>
+				</p>
+				<h6>تتمة</h6>
+				<p>
+					<a class="index" title="226">إكسابوستيلاري ٩</a>
+					<a class="index" title="227">إكسابوستيلاري ١٠</a>
+					<a class="index" title="229">إكسابوستيلاري ١١</a>
+					<a class="index" title="230">إيوثينا ٩</a>
+					<a class="index" title="232">إيوثينا ١٠</a>
+					<a class="index" title="233">إيوثينا ١١</a>
+					<a class="index" title="235">إينوس أول مختصر</a>
+				</p>
+				<h6>ذوكصا مطولة</h6>
+				<p>
+					<a class="index" title="239">لحن أول</a>
+					<a class="index" title="244">نهاوند</a>
+					<a class="index" title="250">زنجران</a>
+					<a class="index" title="255">لحن ثامن</a>
+					<a class="index" title="261">حجاز كار</a>
+					<a class="index" title="266">عجم كرد</a>
+					<a class="index" title="272">لحن سابع</a>
+					<a class="index" title="277">عجم عشيران</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="18">قدوس هو الرب</a>
+					<a class="index" title="11">يا نورا بهيا</a>
+					<a class="index" title="238">اليوم صار الخلاص</a>
+					<a class="index" title="282">احفظ يا رب سيدنا</a>
+					<a class="index" title="283">ثالوثيات</a>
+					<a class="index" title="284">تبريكات القيامة</a>
+					<a class="index" title="287">كل نسمة لحن ٢</a>
+					<a class="index" title="288">كل نسمة لحن ٧</a>
+					<a class="index" title="290">كاطافاسيات السيدة</a>
+					<a class="index" title="293">كل الأرضيين</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="10" title="quddas">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="1">تبريكات القيامة</a>
+					<a class="index" title="5">منذ شبابي</a>
+				</p>
+				<h6>كاطافاسيات</h6>
+				<p>
+					<a class="index" title="6">السيدة</a>
+					<a class="index" title="10">رفع الصليب</a>
+					<a class="index" title="14">دخول السّيدة</a>
+					<a class="index" title="17">الميلاد</a>
+					<a class="index" title="29">الظهور الإلهي</a>
+					<a class="index" title="37">دخول السيد</a>
+					<a class="index" title="41">بشارة السيدة</a>
+					<a class="index" title="44">سبت لعازر</a>
+					<a class="index" title="49">الفصح</a>
+					<a class="index" title="57">أحد الأعمى</a>
+					<a class="index" title="60">عيد العنصرة</a>
+					<a class="index" title="69">تقدمة التجلي</a>
+					<a class="index" title="72"> رقاد السّيدة</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="81">من العنصرة</a>
+					<a class="index" title="85">من الميلاد</a>
+				</p>
+				<h6>ذكصا إينوس</h6>
+				<p>
+					<a class="index" title="88">أحد الآباء</a>
+					<a class="index" title="90">+ يوحنّا الإنجيلي</a>
+					<a class="index" title="91">+ لوقا الإنجيلي</a>
+					<a class="index" title="92">+ الذهبيّ الفم</a>
+					<a class="index" title="93">+ متّى الإنجيلي</a>
+					<a class="index" title="94">+ أندراوس</a>
+					<a class="index" title="95">أحد الأجداد</a>
+					<a class="index" title="97">الأحد قبل الميلاد</a>
+					<a class="index" title="98">ثاني عيد الميلاد</a>
+					<a class="index" title="99">الأحد بعد الميلاد</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="100">الأحد قبل الظهور</a>
+					<a class="index" title="101">الظهور الإلهيّ</a>
+					<a class="index" title="102">+ غريغوريوس</a>
+					<a class="index" title="103">نقل الذهبيّ الفم</a>
+					<a class="index" title="104">الأقمار الثلاثة</a>
+					<a class="index" title="105">+ بطرس وبولس</a>
+					<a class="index" title="107">+ يوحنّا المعمدان</a>
+					<a class="index" title="109">أحد الفصح ١</a>
+					<a class="index" title="111">أحد الفصح ٢</a>
+					<a class="index" title="113">أحد توما</a>
+					<a class="index" title="115">حاملات الطيب</a>
+					<a class="index" title="117">أحد المخلّع</a>
+					<a class="index" title="118">أحد السامريّة</a>
+					<a class="index" title="120">أحد الأعمى</a>
+					<a class="index" title="122">مجدلة لحن رابع</a>
+					<a class="index" title="126">مجدلة عجم كرد</a>
+					<a class="index" title="130">مجدلة نهاوند</a>
+					<a class="index" title="135">إحفظ يا ربّ</a>
+				</p>
+				<h6>في القدّاس</h6>
+				<p>
+					<a class="index" title="137">يا ربّ ارحم</a>
+					<a class="index" title="139">بشفاعات...</a>
+					<a class="index" title="140">خلّصنا ١</a>
+					<a class="index" title="140">يا كلمة الله</a>
+					<a class="index" title="142">خلّصنا ٢</a>
+					<a class="index" title="147">طروبريّات قيامة</a>
+					<a class="index" title="155">يا شفيعة...</a>
+					<a class="index" title="156">إيصوذيكون</a>
+					<a class="index" title="158">تريصاجيون ٢</a>
+					<a class="index" title="162">تريصاجيون ٣</a>
+					<a class="index" title="164">يا ربّ خلّص</a>
+					<a class="index" title="165">أنتم الذين</a>
+					<a class="index" title="168">لصليبك</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="170">فيمي</a>
+					<a class="index" title="172">طروباريّات أعياد</a>
+				</p>
+				<h6>شاروبيكون</h6>
+				<p>
+					<a class="index" title="209">لحن أول</a>
+					<a class="index" title="215">لحن ثاني</a>
+					<a class="index" title="221">لحن ثالث</a>
+					<a class="index" title="225">لحن رابع</a>
+					<a class="index" title="230">لحن خامس</a>
+					<a class="index" title="236">لحن سادس</a>
+					<a class="index" title="240">لحن سابع</a>
+					<a class="index" title="244">لحن ثامن</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="336">إن البرايا ٨</a>
+					<a class="index" title="337">يا جميع الأرض</a>
+					<a class="index" title="338">كثيرون يقولون...</a>
+					<a class="index" title="342">ليكن مجد الرب</a>
+					<a class="index" title="345">قد نظرنا النور</a>
+					<a class="index" title="345">ليكن اسم الرب</a>
+				</p>
+				<h6>كلام جوهري</h6>
+				<p>
+					<a class="index" title="249">لحن أول</a>
+					<a class="index" title="253">أول كورد</a>
+					<a class="index" title="260">لحن ثاني</a>
+					<a class="index" title="264">لحن ثالث</a>
+					<a class="index" title="270">لحن رابع</a>
+					<a class="index" title="274">نهاوند</a>
+					<a class="index" title="279">حصار نهاوند</a>
+					<a class="index" title="283">نهاوند قصير</a>
+					<a class="index" title="286">فريوس</a>
+					<a class="index" title="292">لحن سادس</a>
+					<a class="index" title="298">سادس قصير</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="301">لحن سابع</a>
+					<a class="index" title="307">لحن ثامن</a>
+					<a class="index" title="315">ثامن قصير</a>
+				</p>
+				<h6>تاسعات</h6>
+				<p>
+					<a class="index" title="317">ميلاد السيّدة</a>
+					<a class="index" title="317">رفع الصليب</a>
+					<a class="index" title="318">دخول السيّدة</a>
+					<a class="index" title="320">ميلاد المسيح</a>
+					<a class="index" title="321">ثاني الميلاد</a>
+					<a class="index" title="322">الظهور الإلهيّ</a>
+					<a class="index" title="323">ثاني الظهور</a>
+					<a class="index" title="323">دخول السيد</a>
+					<a class="index" title="324">بشارة السيّدة</a>
+					<a class="index" title="325">التجلّي</a>
+					<a class="index" title="326">رقاد السيدة</a>
+					<a class="index" title="327">سبت لعازر</a>
+					<a class="index" title="327">أحد الشعانين</a>
+					<a class="index" title="329">أحد الفصح</a>
+					<a class="index" title="331">أحد توما</a>
+					<a class="index" title="331">أحد المخلّع</a>
+					<a class="index" title="332">أحد السامريّة</a>
+					<a class="index" title="333">أحد الصعود</a>
+					<a class="index" title="334">أحد العنصرة</a>
+					<a class="index" title="335">الروح القدس</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="346">احفظ يا ربّ</a>
+					<a class="index" title="347">إلى سنين</a>
+					<a class="index" title="351">الإكليل</a>
+					<a class="index" title="356">الشرطونيّة</a>
+					<a class="index" title="358">العيد اليوناني</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="11" title="sounouj 1">
+			<div class="w3-container">
+				<h6>١- الفصل الأوّل</h6>
+				<p>
+					<a class="index" title="11">التسابيح الثالوثيّة</a>
+					<a class="index" title="36">الفوطاغوجيكا</a>
+					<a class="index" title="48">الساعات</a>
+					<a class="index" title="54">البروجيازميني</a>
+					<a class="index" title="71">ذكصا كانين الأربعاء من الأسبوع ٥</a>
+					<a class="index" title="72">ذكصا إيصودن الجمعة قبل الشعانين</a>
+					<a class="index" title="73">كانين إيصودن الجمعة قبل الشعانين</a>
+				</p>
+				<h6>٢- الفصل الثاني</h6>
+				<p>
+					<a class="index" title="77">إفتح لي أبواب التوبة</a>
+					<a class="index" title="80">إنّ البرايا بأسرها</a>
+					<a class="index" title="87">البروكيمنن الكبير</a>
+					<a class="index" title="93">طروباريّات مساء الأحد</a>
+					<a class="index" title="95">طروباريّات السبوت</a>
+				</p>
+				<h6>٣- الفصل الثالث</h6>
+				<p>
+					<a class="index" title="101">أحد الفرّيسي والعشّار</a>
+					<a class="index" title="120">أحد الابن الشاطر</a>
+					<a class="index" title="140">السّبت قبل مرفع اللحم</a>
+					<a class="index" title="171">أحد مرفع اللحم</a>
+					<a class="index" title="200">سبت مرفع الجبن</a>
+					<a class="index" title="232">أحد مرفع الجبن</a>
+					<a class="index" title="253">السبت ١ من الصوم</a>
+					<a class="index" title="269">الأحد ١ من الصوم</a>
+					<a class="index" title="299">الأحد ٢ من الصوم</a>
+					<a class="index" title="314">الأحد ٣ من الصوم</a>
+					<a class="index" title="350">الأحد ٤ من الصوم</a>
+					<a class="index" title="362">خميس القانون الكبير</a>
+					<a class="index" title="365">السبت ٥ من الصوم</a>
+					<a class="index" title="372">الأحد ٥ من الصوم</a>
+					<a class="index" title="386">الجمعة قبل الشعانين</a>
+					<a class="index" title="390">سبت لعازر</a>
+					<a class="index" title="419">أحد الشعانين</a>
+				</p>
+				<h6>٤- الفصل الرابع</h6>
+				<p>
+					<a class="index" title="463">إنّني أشاهد خدرك</a>
+					<a class="index" title="465">صلاة الزيت المقدّس</a>
+					<a class="index" title="482">الخميس العظيم</a>
+					<a class="index" title="488">الجمعة العظيمة</a>
+					<a class="index" title="492">سبت النور</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="12" title="sounouj 2">
+			<div class="w3-container">
+				<h6>١- طوبى للرجل</h6>
+				<p>
+					<a class="index" title="1">لحن أول</a>
+					<a class="index" title="16">لحن ثامن</a>
+					<a class="index" title="28">ثامن ستيشيراري</a>
+				</p>
+				<h6>٢- لماذا ارتجّت الأمم</h6>
+				<p>
+					<a class="index" title="5">لحن أول</a>
+					<a class="index" title="19">لحن ثامن</a>
+					<a class="index" title="32">ثامن ستيشيراري</a>
+				</p>
+				<h6>٣- يا رب لماذا كثر</h6>
+				<p>
+					<a class="index" title="11">لحن أول</a>
+					<a class="index" title="24">لحن ثامن</a>
+					<a class="index" title="38">ثامن ستيشيراري</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="43">٨- أيها الرب ربّنا</a>
+					<a class="index" title="47">١٠- علي الرب توكّلت</a>
+					<a class="index" title="51">١١- خلصني يا رب</a>
+					<a class="index" title="56">١٢- إلى متى يا رب</a>
+					<a class="index" title="59">١٤- يا رب من ذا الذي يقيم</a>
+					<a class="index" title="62">١٥- إحفظني يا رب</a>
+					<a class="index" title="66">١٦- أيها الرب القدوس</a>
+					<a class="index" title="74">١٧- أحبك يا رب</a>
+					<a class="index" title="80">١٨- السماوات تذيع بمجد الله</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="86">مزامير المطالبسي - الرب يرعاني</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="96">٢٩- إنّي أعظمك يا رب</a>
+					<a class="index" title="101">٣٢- إبتهجوا بالرب</a>
+					<a class="index" title="108">٣٣- أبارك الرب</a>
+					<a class="index" title="116">٣٥- الشرير يفكّر بالشر</a>
+					<a class="index" title="121">٤١- كما يشتاق الأيل</a>
+					<a class="index" title="127">٤٦- يا جميع الأمم صفّقوا</a>
+					<a class="index" title="129">٥٠- إرحمني يا الله - حجاز كار</a>
+					<a class="index" title="135">٥٠- إرحمني يا الله - كرد</a>
+					<a class="index" title="141">٥٦- إرحمني يا الله ارحمني</a>
+					<a class="index" title="146">٦٠- أللهم استمع إلى طلبتي</a>
+					<a class="index" title="148">٦٤- بك يليق التسبيح</a>
+					<a class="index" title="153">٦٦- ليرأف اللة بنا</a>
+					<a class="index" title="156">٧٨- أللهم إن الأمم دخلوا</a>
+					<a class="index" title="159">٨١- الله قائم في مجمع الآلهة</a>
+					<a class="index" title="161">٩٤- هلموا نبتهج بالرب</a>
+					<a class="index" title="166">٩٥- رتلوا للرب ترتيلة جديدة</a>
+					<a class="index" title="172">٩٩- يا جميع الأرض هللوا</a>
+					<a class="index" title="175">١١٤- فرحت جدا</a>
+					<a class="index" title="178">١١٧- إحمدوا الرب</a>
+					<a class="index" title="185">١١٨- طوبى للذين</a>
+					<a class="index" title="232">١٣٥- إحمدوا الرب</a>
+					<a class="index" title="240">١٣٧- إياك أحمد</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="244">بوليئيليون الميلاد - هللوا للرب</a>
+					<a class="index" title="254">بوليئيليون كلمة صالحة</a>
+					<a class="index" title="267">أدعية لمطران طرابلس</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="bookTOC w3-light-grey" id="13" title="moutafarriqat">
+			<div class="w3-container">
+				<p>
+					<a class="index" title="1">تبريكات القيامة</a>
+				</p>
+				<h6>ترنيمات خاصة بسحر الآحاد</h6>
+				<p>
+					<a class="index" title="8">اللحن الأول</a>
+					<a class="index" title="9">اللحن الثاني</a>
+					<a class="index" title="10">اللحن الثالث</a>
+					<a class="index" title="11">اللحن الرابع</a>
+					<a class="index" title="12">اللحن الخامس</a>
+					<a class="index" title="13">اللحن السادس</a>
+					<a class="index" title="14">اللحن السابع</a>
+					<a class="index" title="15">اللحن الثامن</a>
+				</p>
+				<br>
+				<p>
+					<a class="index" title="16">كل نسمة - لحن ثاني</a>
+					<a class="index" title="16">المجد لك يا رب - لحن ثامن</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="17">المجد... بشفاعات... لحن ثاني</a>
+					<a class="index" title="19">يا رحيم - لحن سادس</a>
+					<a class="index" title="21">أفتح فمي - لحن رابع</a>
+					<a class="index" title="30">قدّوس هي الرب</a>
+				</p>
+				<hr>
+				<p>
+					<a class="index" title="31">اليوم صار الخلاص</a>
+					<a class="index" title="32">أنتم اللذين</a>
+					<a class="index" title="34">منذ شبابي</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="thepage">
+		<img id="page">
+	</div>
+
+
+	<script type="text/javascript" src="_scripts/script.js"></script>
 </body>
 
 </html>
