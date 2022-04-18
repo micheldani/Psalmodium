@@ -1,0 +1,147 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Tajawal', sans-serif;
+	background: #eee
+}
+
+#book {
+	padding: 8px 8px 0px 32px;
+}
+
+#b-index {
+	height: 40px;
+}
+
+#b-coll {
+	padding: 0;
+	margin: 0;
+	width: auto;
+	height: 40px;
+}
+
+#arrow {
+	padding: 8px 0px 0px;
+	margin: 0;
+	text-align: left;
+	width: 48px;
+	transform: scale(1,0.5);
+}
+
+#f-goto {
+	height: 40px;
+}
+
+#b-go {
+	max-width: 48px;
+	height: 40px
+}
+
+#message {
+	max-width: 48px;
+	height: 40px;
+}
+
+.drop-collection {
+	height: auto;
+	background: #f8f8f8;
+}
+
+table {
+	min-height: 400px;
+}
+
+.bookTOC {
+	column-count: 2;
+	column-gap: 0.5rem;
+	padding: 16px 32px 48px 16px;
+}
+
+.drop-collection {
+	direction: rtl;
+	font-size: 1.2em;
+	line-height: 1.3em;
+	font-weight: bold;
+	max-width: 100vw;
+}
+
+.drop-index {
+	direction: rtl;
+	font-size: 1em;
+	max-width: 100vw;
+	right: 0;
+}
+
+h6 {
+	text-decoration: underline;
+	font-family: 'Tajawal', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+p + h6 {
+	margin: 2rem 0 0;
+}
+
+p {
+	margin: 0px 0px 16px 0px;
+	line-height: 165%;
+}
+
+.w3-container a {
+	display: block;
+	line-height: 1.2rem;
+	margin-bottom: .6rem;
+	padding: 0;
+	text-indent: -1rem;
+}
+
+.w3-container a:before {
+	content: ".";
+	font-size: 2rem;
+	font-weight: bold;
+	padding-left: 4px;
+}
+
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #aaaaaa;
+}
+
+a:active {
+	text-decoration: none;
+	color: #606060;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	text-align: center;
+	width: 50%;
+	background-color: grey;
+}
+
+#thepage {
+	display: flex;
+}
+
+#page {
+	margin: 0 auto;
+	padding: 0 0 56px;
+	width: 100%;
+	height:100%;
+}
